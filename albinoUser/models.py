@@ -29,12 +29,15 @@ class Sana(models.Model):
 
 
 class Oylik(models.Model):
+    name = models.CharField(max_length=100,null=True,blank=True)
     sana = models.ForeignKey(Sana, on_delete=models.CASCADE)
     user = models.ForeignKey(TelegramUser, on_delete=models.CASCADE)
     jami_oylik = models.FloatField()
     karobka_puli = models.FloatField()
     bonus = models.FloatField()
+    kpi = models.FloatField(null=True,blank=True)
     avans = models.FloatField()
+    avans_plastik = models.FloatField(blank=True,null=True)
     shtraf = models.FloatField()
     ishlamagan_kun = models.FloatField()
     forma = models.FloatField()
